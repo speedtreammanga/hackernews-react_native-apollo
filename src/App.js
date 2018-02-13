@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 import Header from './components/Header';
+import TabNavigator from './components/TabNavigator';
 import LinkList from './components/LinkList';
 
 export default class App extends Component{
@@ -19,9 +20,7 @@ export default class App extends Component{
     return (
       <View style={styles.container}>
         <Header />
-        <View style={styles.content}>
-          <LinkList />
-        </View>
+        <TabNavigator />
       </View>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
 class Header extends Component {
 	render() {
@@ -8,23 +9,6 @@ class Header extends Component {
 				<View style={styles.flexBetween}>
 					<Text style={styles.title}>Hacker News</Text>
 					<Text onPress={() => {}}>login</Text>
-				</View>
-				<View style={styles.flexRow}>
-					<Text style={styles.button} onPress={() => {}}>
-                        new
-                    </Text>
-					<Text style={styles.divider}>|</Text>
-					<Text style={styles.button} onPress={() => {}}>
-                        top
-                    </Text>
-					<Text style={styles.divider}>|</Text>
-					<Text style={styles.button} onPress={() => {}}>
-                        search
-                    </Text>
-					<Text style={styles.divider}>|</Text>
-                    <Text style={styles.button} onPress={() => {}}>
-                        submit
-                    </Text>
 				</View>
 			</View>
 		);
