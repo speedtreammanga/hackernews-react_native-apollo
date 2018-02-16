@@ -16,7 +16,8 @@ class Link extends Component {
 					<Text numberOfLines={2}>{link.item.description}</Text>
 					<Text style={styles.url}>({link.item.url})</Text>
 					<Text numberOfLines={1}>
-						{link.item.votes.length} votes | by{' '}
+                        {/* {link.item.votes.length} votes | by{' '} */}
+                        0 votes | by{' '}
 						{link.item.postedBy
 							? link.item.postedBy.name
 							: 'Unknown'
@@ -25,7 +26,11 @@ class Link extends Component {
 				</View>
 			</View>
 		);
-	}
+    }
+    
+    _voteForLink = async () => {
+        // ...
+    }
 }
 
 const styles = StyleSheet.create({

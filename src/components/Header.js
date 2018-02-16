@@ -1,17 +1,43 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import React from 'react';
+import { View, Text, TouchableOpacity, AsyncStorage, StyleSheet } from 'react-native';
+
+import { AUTH_TOKEN } from '../constants';
+import Component from '../models/ReactComponent';
 
 class Header extends Component {
+	state = {
+		authToken: null,
+		fetchingAuthToken: true,
+	}
+
+	_onPressAuthAction = (authToken) => {
+		if (authToken) {
+			return;
+		}
+		// !debounced the following line
+		this.props.onPressLogin();
+	}
+
 	render() {
+		const { authToken, fetchingAuthToken } = this.state;
+		if (fetchingAuthToken)
+			this._fetchAuthToken();
+
 		return (
 			<View style={styles.container}>
 				<View style={styles.flexBetween}>
 					<Text style={styles.title}>Hacker News</Text>
-					<Text onPress={() => {}}>login</Text>
+					<TouchableOpacity
+						hitSlop={{top: 5, bottom: 5, left: 5, right: 5}}
+						onPress={() => this._onPressAuthAction(authToken)}
+					>
+					{!fetchingAuthToken &&
+						<Text>{!authToken ? 'Login' : 'Logout'}</Text>
+					}
+					</TouchableOpacity>
 				</View>
 			</View>
-		);
+		)
 	}
 }
 

@@ -13,6 +13,7 @@
     "react": "16.2.0",
     "react-apollo": "^2.0.4",
     "react-native": "0.53.0",
+    "react-native-autogrow-textinput": "^5.1.1",
     "react-navigation": "^1.0.3"
   },
   "devDependencies": {
